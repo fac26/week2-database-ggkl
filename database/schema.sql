@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS films (
     name TEXT NOT NULL,
     year INTEGER NOT NULL,
     director TEXT NOT NULL,
-    genre_id TEXT REFERENCES genres(id)
-    CHECK (year >=(0)),
+    genre_id TEXT REFERENCES genres(id),
+    CHECK (year >=(0))
 );
 
 CREATE TABLE IF NOT EXISTS genres (
