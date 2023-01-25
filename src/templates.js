@@ -4,6 +4,8 @@ function Layout({ title, content }) {
       <html lang="en">
         <head>
           <meta charset="UTF-8">
+            <link rel="stylesheet" href="./public/style.css" />
+            <link href= "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
           <title>${title}</title>
           <style></style>
         </head>
@@ -29,34 +31,34 @@ function Layout({ title, content }) {
     `;
 }
 
-// function Table({ caption, data }) {
-//   const keys = Object.keys(data[0]);
-//   return /*html*/ `
-//     <div class="table-wrapper">
-//       <table>
-//         <caption>${caption} <small>(${data.length})</small></caption>
-//         <thead>
-//           <tr>
-//             ${keys.map((key) => `<th>${key}</th>`).join("")}
-//           </tr>
-//         </thead>
-//         <tbody>
-//           ${data.map(Row).join("")}
-//         </tbody>
-//       </table>
-//     </div>
-//   `;
-// }
+function Table({ caption, data }) {
+    const keys = Object.keys(data[0]);
+    return /*html*/ `
+    <div class="table-wrapper">
+      <table>
+        <caption>${caption} <small>(${data.length})</small></caption>
+        <thead>
+          <tr>
+            ${keys.map((key) => `<th>${key}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(Row).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
 
-// function Row(entry) {
-//   return /*html*/ `
-//     <tr>
-//       ${Object.values(entry)
-//         .map((val) => `<td>${val}</td>`)
-//         .join("")}
-//     </tr>
-//   `;
-// }
+function Row(entry) {
+    return /*html*/ `
+    <tr>
+      ${Object.values(entry)
+          .map((val) => `<td>${val}</td>`)
+          .join('')}
+    </tr>
+  `;
+}
 
 function AddFilmsForm(title) {
     return /*html*/ `
@@ -85,7 +87,7 @@ function AddFilmsForm(title) {
 `;
 }
 
-module.exports = { Layout, AddFilmsForm };
+module.exports = { Layout, Table, AddFilmsForm };
 
 // const content = (posts, error = {}, value = {}) => {
 //     return /*html*/ `<!DOCTYPE html>
