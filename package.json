@@ -4,11 +4,13 @@
     "description": "## film database",
     "main": "index.js",
     "scripts": {
-        "test": "node ./tests/1.test.js",
         "start": "node index.js",
         "seed": "DB_FILE=db.sqlite node ./database/seed.js",
         "dev-start": "nodemon index.js",
-        "dev": "DB_FILE=db.sqlite node index.js"
+        "dev": "DB_FILE=db.sqlite node index.js",
+        "test": "SET DB_FILE=test.sqlite && node -r ./database/seed.js --no-warnings --test",
+    "test:1": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/one.test.js",
+
     },
     "repository": {
         "type": "git",
