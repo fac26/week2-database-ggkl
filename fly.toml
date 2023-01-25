@@ -15,7 +15,7 @@ processes = []
   auto_rollback = true
 
 [mounts]
-   source = "myapp_data"
+   source = "data"
    destination = "/data"
 
 [[services]]
