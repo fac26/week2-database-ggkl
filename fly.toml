@@ -14,6 +14,10 @@ processes = []
 [experimental]
   auto_rollback = true
 
+[mounts]
+  source="myapp_data"
+  destination="/data"
+
 [[services]]
   http_checks = []
   internal_port = 8080
@@ -39,7 +43,3 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-  [mounts]
-    source="myapp_data"
-    destination="/data"
