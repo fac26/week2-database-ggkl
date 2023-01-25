@@ -70,16 +70,16 @@ function AddFilmsForm(title) {
         
       </p>
       <p>
-        <label for="qty">Quantity per unit</label>
-        <input name="quantity_per_unit" id="qty">
+        <label for="year">Year</label>
+        <input name="year" id="year" type="number">
       </p>
       <p>
-        <label for="price">Unit price</label>
-        <input name="unit_price" id="price" type="number" step="0.01">
+        <label for="director">Director</label>
+        <input name="director" id="director">
       </p>
       <p>
-        <label>Category</label>
-        <select name="category_id">
+        <label>Genre</label>
+        <select name="genre_id">
         </select>
       </p>
       <button>Create &plus;</button>
