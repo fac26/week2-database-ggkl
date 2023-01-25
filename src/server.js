@@ -1,9 +1,9 @@
 const express = require('express');
-const add = require('./routes/add.js');
+const add = require('../routes/');
 
 const server = express();
 server.get('/new', add.get);
-server.post('/new', express.urlencoded({ extended: false }), add.post);
+// server.post('/new', express.urlencoded({ extended: false }), add.post);
 
 module.exports = server;
 // const staticHandler = express.static('public');
