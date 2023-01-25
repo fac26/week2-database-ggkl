@@ -1,5 +1,3 @@
-module.exports = { Layout, AddFilmsForm };
-
 function Layout({ title, content }) {
     return /*html*/ `
       <!doctype html>
@@ -7,7 +5,7 @@ function Layout({ title, content }) {
         <head>
           <meta charset="UTF-8">
           <title>${title}</title>
-          <style>${styles}</style>
+          <style></style>
         </head>
         <body>
           <div class="layout">
@@ -31,9 +29,38 @@ function Layout({ title, content }) {
     `;
 }
 
-function AddFilmsForm() {
+// function Table({ caption, data }) {
+//   const keys = Object.keys(data[0]);
+//   return /*html*/ `
+//     <div class="table-wrapper">
+//       <table>
+//         <caption>${caption} <small>(${data.length})</small></caption>
+//         <thead>
+//           <tr>
+//             ${keys.map((key) => `<th>${key}</th>`).join("")}
+//           </tr>
+//         </thead>
+//         <tbody>
+//           ${data.map(Row).join("")}
+//         </tbody>
+//       </table>
+//     </div>
+//   `;
+// }
+
+// function Row(entry) {
+//   return /*html*/ `
+//     <tr>
+//       ${Object.values(entry)
+//         .map((val) => `<td>${val}</td>`)
+//         .join("")}
+//     </tr>
+//   `;
+// }
+
+function AddFilmsForm(title) {
     return /*html*/ `
-    <h1>Form</h1>
+    <h1>${title}</h1>
     <form method="POST">
       <p>
         <label for="name">Name</label>
@@ -58,7 +85,8 @@ function AddFilmsForm() {
 `;
 }
 
-module.exports = { AddFilmsForm };
+module.exports = { Layout, AddFilmsForm };
+
 // const content = (posts, error = {}, value = {}) => {
 //     return /*html*/ `<!DOCTYPE html>
 //     <html lang="en">
