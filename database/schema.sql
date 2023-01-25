@@ -1,0 +1,19 @@
+PRAGMA foreign_keys = ON;
+
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS films (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    director TEXT NOT NULL,
+    genre_id TEXT REFERENCES genres(id)
+    CHECK (year >=(0)),
+);
+
+CREATE TABLE IF NOT EXISTS genres (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+COMMIT;
