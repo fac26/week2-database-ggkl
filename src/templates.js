@@ -1,13 +1,13 @@
-module.exports = { Layout, AddFilmsForm };
-
 function Layout({ title, content }) {
     return /*html*/ `
       <!doctype html>
       <html lang="en">
         <head>
           <meta charset="UTF-8">
+            <link rel="stylesheet" href="./public/style.css" />
+            <link href= "https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
           <title>${title}</title>
-          <style>${styles}</style>
+          <style></style>
         </head>
         <body>
           <div class="layout">
@@ -31,9 +31,38 @@ function Layout({ title, content }) {
     `;
 }
 
-function AddFilmsForm() {
+function Table({ caption, data }) {
+    const keys = Object.keys(data[0]);
     return /*html*/ `
-    <h1>Form</h1>
+    <div class="table-wrapper">
+      <table>
+        <caption>${caption} <small>(${data.length})</small></caption>
+        <thead>
+          <tr>
+            ${keys.map((key) => `<th>${key}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+          ${data.map(Row).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function Row(entry) {
+    return /*html*/ `
+    <tr>
+      ${Object.values(entry)
+          .map((val) => `<td>${val}</td>`)
+          .join('')}
+    </tr>
+  `;
+}
+
+function AddFilmsForm(title) {
+    return /*html*/ `
+    <h1>${title}</h1>
     <form method="POST">
       <p>
         <label for="name">Name</label>
@@ -41,16 +70,16 @@ function AddFilmsForm() {
         
       </p>
       <p>
-        <label for="qty">Quantity per unit</label>
-        <input name="quantity_per_unit" id="qty">
+        <label for="year">Year</label>
+        <input name="year" id="year" type="number">
       </p>
       <p>
-        <label for="price">Unit price</label>
-        <input name="unit_price" id="price" type="number" step="0.01">
+        <label for="director">Director</label>
+        <input name="director" id="director">
       </p>
       <p>
-        <label>Category</label>
-        <select name="category_id">
+        <label>Genre</label>
+        <select name="genre_id">
         </select>
       </p>
       <button>Create &plus;</button>
@@ -58,7 +87,8 @@ function AddFilmsForm() {
 `;
 }
 
-module.exports = { AddFilmsForm };
+module.exports = { Layout, Table, AddFilmsForm };
+
 // const content = (posts, error = {}, value = {}) => {
 //     return /*html*/ `<!DOCTYPE html>
 //     <html lang="en">
