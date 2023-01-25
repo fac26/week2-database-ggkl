@@ -15,3 +15,4 @@ module.exports = server;
 // static handler
 const staticHandler = express.static('public');
 server.use(staticHandler);
+
