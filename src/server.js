@@ -6,7 +6,7 @@ server.get('/new', add.get);
 // server.post('/new', express.urlencoded({ extended: false }), add.post);
 
 module.exports = server;
-// const staticHandler = express.static('public');
+const staticHandler = express.static('public');
 // const { sanitize, content } = require('./templates.js');
 
 // const {
@@ -17,7 +17,7 @@ module.exports = server;
 //     getUserId,
 // } = require('./model/films.js', './model/reviews.js');
 
-// server.use(staticHandler);
+server.use(staticHandler);
 
 // const bodyParser = express.urlencoded();
 
