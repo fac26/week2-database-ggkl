@@ -1,6 +1,4 @@
-const db = require("../database/db.js");
-
-module.exports = { listFilms };
+const db = require('../database/db.js');
 
 const select_films = db.prepare(/*sql*/ `
   SELECT
@@ -10,22 +8,24 @@ const select_films = db.prepare(/*sql*/ `
 `);
 
 function listFilms() {
-  return select_films.all();
+    return select_films.all();
 }
 
-// const select_film = db.prepare(/*sql*/ `
-//   SELECT
-//     films.id,
-//     films.name,
-//     genres.genre_name AS genre_name,
-//   FROM films
-//   JOIN genres ON films.genre_id = genres.id
-//   WHERE products.id = ?
-// `);
+const select_film = db.prepare(/*sql*/ `
+  SELECT
+    films.id,
+    films.name,
+    genres.genre_name AS genre_name
+  FROM films
+  JOIN genres ON films.genre_id = genres.id
+  WHERE films.id = ?
+`);
 
-// function getFilm(id) {
-//   return select_film.get(id);
-// }
+console.log(select_film);
+
+function getFilm(id) {
+  return select_film.get(id);
+}
 
 // const search_films = db.prepare(/*sql*/ `
 //   SELECT
@@ -39,17 +39,19 @@ function listFilms() {
 //   return search_products.all("%" + search_term + "%");
 // }
 
-// const insert_film = db.prepare(/*sql*/ `
-//   INSERT INTO films (name, year, director, genre_id)
-//   VALUES(
-//     $name,
-//     $year,
-//     $director,
-//     $genre_id,
-//   )
-//   RETURNING id
-// `);
+const insert_film = db.prepare(/*sql*/ `
+  INSERT INTO films (name, year, director, genre_id)
+  VALUES(
+    $name,
+    $year,
+    $director,
+    $genre_id
+  )
+  RETURNING id
+`);
 
-// function createFilm(film) {
-//   return insert_film.get(film);
-// }
+function createFilm(film) {
+  return insert_film.get(film);
+}
+
+module.exports = { listFilms, getFilm, createFilm };
