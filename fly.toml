@@ -1,6 +1,6 @@
-# fly.toml file generated for week2-database-ggkl on 2023-01-24T14:28:48Z
+# fly.toml file generated for week2-datatbase-ggkl on 2023-01-25T19:19:12Z
 
-app = "week2-database-ggkl"
+app = "week2-datatbase-ggkl"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -13,6 +13,10 @@ processes = []
 
 [experimental]
   auto_rollback = true
+
+[mounts]
+   source = "data"
+   destination = "/data"
 
 [[services]]
   http_checks = []
@@ -39,7 +43,3 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-  [mounts]
-    source="myapp_data"
-    destination="/data"

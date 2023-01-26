@@ -9,9 +9,11 @@
         "dev-start": "nodemon index.js",
         "dev": "DB_FILE=db.sqlite node index.js",
         "test": "SET DB_FILE=test.sqlite && node -r ./database/seed.js --no-warnings --test",
+
     "test:1": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/one.test.js",
     "test:2": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/two.test.js",
     "test:3": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/three.test.js"
+
     },
     "repository": {
         "type": "git",
@@ -32,5 +34,8 @@
         "eslint": "^8.32.0",
         "nodemon": "^2.0.20",
         "prettier": "^2.8.3"
-    }
+    },
+    "volta": {
+        "node": "18.12.1"
+     }
 }
