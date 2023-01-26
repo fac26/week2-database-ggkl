@@ -1,5 +1,5 @@
-const { listFilms } = require("../model/films.js");
-const { Layout, Table } = require("../src/templates.js");
+const { listFilms } = require("../model/films");
+const { Layout, Table } = require("../src/templates");
 
 function get(req, res) {
   const products = listFilms();

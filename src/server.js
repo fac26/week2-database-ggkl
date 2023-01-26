@@ -1,6 +1,6 @@
 const express = require('express');
 
-const films = require('../routes/films.js');
+const films = require('../routes/films.js==');
 // const add = require('../routes/add.js');
 
 const server = express();
@@ -10,9 +10,8 @@ server.get('/', films.get);
 // server.get('/new', add.get);
 // server.post('/new', bodyParser, add.post);
 
-module.exports = server;
-
 // static handler
 const staticHandler = express.static('public');
 server.use(staticHandler);
 
+module.exports = server;

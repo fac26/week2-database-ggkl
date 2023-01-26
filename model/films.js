@@ -1,6 +1,6 @@
 const db = require("../database/db.js");
 
-module.exports = { listFilms };
+
 
 const select_films = db.prepare(/*sql*/ `
   SELECT
@@ -53,3 +53,6 @@ function listFilms() {
 // function createFilm(film) {
 //   return insert_film.get(film);
 // }
+
+
+module.exports = { listFilms };
