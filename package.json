@@ -10,7 +10,8 @@
         "dev": "DB_FILE=db.sqlite node index.js",
         "test": "SET DB_FILE=test.sqlite && node -r ./database/seed.js --no-warnings --test",
     "test:1": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/one.test.js",
-
+    "test:2": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/two.test.js",
+    "test:3": "SET DB_FILE=test.sqlite & node -r ./database/seed.js --no-warnings test/three.test.js"
     },
     "repository": {
         "type": "git",
