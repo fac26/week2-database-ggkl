@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 const { Layout, Table } = require('../src/templates.js');
 // const { listGenres } = require('../model/genres.js');
 const { listFilms } = require('../model/films.js');
+=======
+const { listFilms } = require("../model/films");
+const { Layout, Table } = require("../src/templates");
+>>>>>>> 72fd28c248e6ef5ce3510c375fc8d87d24d8e209
 
 function get(req, res) {
     const films = listFilms();

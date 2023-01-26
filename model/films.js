@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 const db = require('../database/db.js');
+=======
+const db = require("../database/db.js");
+
+
+>>>>>>> 72fd28c248e6ef5ce3510c375fc8d87d24d8e209
 
 const select_films = db.prepare(/*sql*/ `
   SELECT
@@ -50,8 +56,17 @@ const insert_film = db.prepare(/*sql*/ `
   RETURNING id
 `);
 
+<<<<<<< HEAD
 function createFilm(film) {
   return insert_film.get(film);
 }
 
 module.exports = { listFilms, getFilm, createFilm };
+=======
+// function createFilm(film) {
+//   return insert_film.get(film);
+// }
+
+
+module.exports = { listFilms };
+>>>>>>> 72fd28c248e6ef5ce3510c375fc8d87d24d8e209
