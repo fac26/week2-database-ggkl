@@ -87,8 +87,6 @@ function AddFilmsForm(title) {
 `;
 }
 
-module.exports = { Layout, Table, AddFilmsForm };
-
 // const content = (posts, error = {}, value = {}) => {
 //     return /*html*/ `<!DOCTYPE html>
 //     <html lang="en">
@@ -148,3 +146,5 @@ module.exports = { Layout, Table, AddFilmsForm };
 //         </html>
 //   `;
 // };
+
+module.exports = { Layout, Table, AddFilmsForm };
